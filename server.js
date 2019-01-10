@@ -9,7 +9,7 @@ app.use(session({
   resave: true,
   saveUninitialized: true
 }))
-app.set('view engine', 'ejs')
+app.set('view engine', 'ejs');
 
 console.log("about to listen on " + (process.env.PORT || 8080));
 var listener = app.listen(process.env.PORT || 8080, function() {
