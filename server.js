@@ -24,7 +24,7 @@ app.get('/', function(req, res, next) {
     req.session.location = {lat: 'n/a', lon: 'n/a'};
   }
   if (req.query.lat && req.query.lon) {
-    console.log("query string: " + req.query);
+    console.log("query string: ", req.query);
     // Access the session as req.session
     // put the lat and lon from the query string into the session
     req.session.location = {lat: req.query.lat, lon: req.query.lon};
@@ -32,7 +32,7 @@ app.get('/', function(req, res, next) {
   // if we have location in the session, render the showlocation.ejs page to sho
   // the location in the browser
   if (req.session.location) {
-    console.log("show location: " + req.session.location);
+    console.log("show location: ", req.session.location);
     res.render('showlocation.ejs', {location: req.session.location});
   } else {
     console.log("getlocation.html");
